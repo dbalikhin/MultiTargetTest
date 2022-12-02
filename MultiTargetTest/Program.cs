@@ -1,4 +1,6 @@
-﻿namespace MultiTargetTest
+using System;
+
+namespace MultiTargetTest
 {
     internal class Program
     {
