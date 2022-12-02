@@ -1,0 +1,57 @@
+name: "Reusable build"
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: false
+        type: string
+      configuration:
+        required: true
+        type: string
+      makeartifacts:
+        required: false
+        type: boolean
+        default: false
+
+permissions: {}
+
+jobs:
+  build:
+    runs-on: windows-2022
+
+    env:
+      Solution_Name: MultiTargetTest.sln
+      DOTNET_CLI_TELEMETRY_OPTOUT: 1
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        persist-credentials: false
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: |
+          3.1.x
+          5.0.x
+          6.0.x
+          7.0.x
+        include-prerelease: false
+
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Setup VSTest
+      uses: darenm/Setup-VSTest@ee4202680b63bd7b2f0deb71ab55104b71917843
+
+    - name: Restore
+      run: nuget restore $env:Solution_Name
+      env:
+        Configuration: ${{ inputs.configuration }}
+
+    - name: Build
+      run: msbuild -m $env:Solution_Name /p:Configuration=$env:Configuration
+      env:
+        Configuration: ${{ inputs.configuration }}
