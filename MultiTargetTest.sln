@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTargetTest", "MultiTargetTest\MultiTargetTest.csproj", "{D47AF19D-FBD2-40C5-8498-C70EFC7B207F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D47AF19D-FBD2-40C5-8498-C70EFC7B207F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D47AF19D-FBD2-40C5-8498-C70EFC7B207F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D47AF19D-FBD2-40C5-8498-C70EFC7B207F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D47AF19D-FBD2-40C5-8498-C70EFC7B207F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1C93FC6-AB45-4D97-AFFA-B883277D9FE8}
+	EndGlobalSection
+EndGlobal
